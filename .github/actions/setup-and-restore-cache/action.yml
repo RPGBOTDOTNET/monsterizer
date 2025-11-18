@@ -1,0 +1,25 @@
+name: "Setup and Restore Cache"
+description: "Composite action to setup Node.js, restore npm/node_modules cache, and install dependencies.\nUse it in workflows with `uses: ./.github/actions/setup-and-restore-cache`."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Read Node version from .nvmrc
+      id: node-version
+      shell: bash
+      run: echo "node=$(cat .nvmrc)" >> $GITHUB_OUTPUT
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ steps.node-version.outputs.node }}
+
+    - name: Restore npm & node_modules cache
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.npm
+          node_modules
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-
