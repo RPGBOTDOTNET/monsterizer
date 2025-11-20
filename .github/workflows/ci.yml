@@ -116,7 +116,7 @@ jobs:
   #   runs-on: ubuntu-latest
   #   needs: setup
   #   steps:
-  #     - uses: ./.github/actions/setup-and-restore-cache
+  #     - uses: ./.github/actions/setup-and-restore-cache.yml
 
   #     - name: Run Cypress
   #       run: npx cypress run
