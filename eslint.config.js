@@ -11,12 +11,12 @@ import tseslint from "typescript-eslint";
 export default defineConfig([
   globalIgnores(["dist"]),
   eslintConfigPrettier,
+  reactHooks.configs.flat.recommended,
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      reactHooks.configs["recommended-latest"],
       reactRefresh.configs.vite,
 
       // Enable lint rules for React
