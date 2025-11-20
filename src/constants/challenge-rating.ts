@@ -10,7 +10,7 @@ type statByCr = {
   saveDc: number;
 };
 
-export const STATS_BY_CR: { [cr: string]: statByCr } = {
+export const STATS_BY_CR_2014: { [cr: string]: statByCr } = {
   "0": {
     experience: 10,
     proficiencyBonus: 2,
@@ -389,6 +389,6 @@ export const STATS_BY_CR: { [cr: string]: statByCr } = {
   // THE REST OF THIS IS MADE UP
 };
 
-export const CHALLENGE_RATINGS = Object.keys(STATS_BY_CR).sort(
+export const CHALLENGE_RATINGS = Object.keys(STATS_BY_CR_2014).sort(
   (a, b) => eval(a) - eval(b),
 );

@@ -1,4 +1,3 @@
-import { SPECIAL_TRAITS } from "./monster-traits";
 import {
   AbilityScores,
   ActionTypes,
@@ -10,7 +9,8 @@ import {
   RestTypes,
   Skills,
   SpellcastingTypes,
-} from "./types";
+} from "../types";
+import { SPECIAL_TRAITS } from "./monster-traits";
 
 export const MONSTER_SRD: Monster[] = [
   {
