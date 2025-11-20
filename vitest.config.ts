@@ -7,6 +7,15 @@ export default defineConfig({
     setupFiles: ["./vitest-setup.js"],
 
     coverage: {
+      exclude: [
+        "**/tests/**",
+        "**/*.css",
+        "**/*.type.ts",
+        "**/*.test.{ts,tsx}",
+        "main.tsx",
+        "vitest-setup.ts",
+      ],
+      include: ["src/**/*.{ts,tsx}"],
       reporter: ["text", "json", "html"],
     },
     projects: [

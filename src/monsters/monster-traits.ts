@@ -1,5 +1,5 @@
 import { lowerFirst } from "lodash";
-import type { DamageType, Monster, SpecialTrait } from "./types";
+import type { DamageType, Monster, SpecialTrait } from "../types";
 
 const NO_EFFECT_WARNING =
   "WARNING: Does not have an automatically-calculated effect on CR. Use with caution.";
