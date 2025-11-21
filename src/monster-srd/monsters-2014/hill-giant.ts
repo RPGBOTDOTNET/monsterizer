@@ -1,0 +1,91 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+  Skills,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 21,
+    [AbilityScores.Dexterity]: 8,
+    [AbilityScores.Constitution]: 19,
+    [AbilityScores.Intelligence]: 5,
+    [AbilityScores.Wisdom]: 9,
+    [AbilityScores.Charisma]: 6,
+  },
+  ac: 13,
+  actions: [
+    {
+      averageDamage: 36,
+      description: "The giant makes two greatclub attacks.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 8,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 18,
+      damageExpression: "3d8 + 5",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*18 Attack:* +8 to hit, reach 10 ft., one target. *Hit:* 18 (3d8 + 5) bludgeoning damage.",
+      name: "Greatclub",
+      reach: 10,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 8,
+      attackType: AttackTypes.RangedWeapon,
+      averageDamage: 21,
+      description:
+        "*Ranged Weapon Attack:* +8 to hit, range 60/240 ft., one target. *Hit:* 21 (3d10 + 5) bludgeoning damage.",
+      name: "Rock",
+      range: "60/240",
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    lawChaos: "Chaotic",
+    goodEvil: "Evil",
+  },
+  attack: 8,
+  cantSpeak: false,
+  challenge: "5",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Giant",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "Giants",
+  hitDice: {
+    count: 10,
+    size: "d12",
+    modifier: 0,
+  },
+  languages: "Giant",
+  name: "Hill Giant",
+  reactions: [],
+  savingThrows: {},
+  senses: "",
+  skills: {
+    [Skills.Perception]: {
+      proficient: 1,
+    },
+  },
+  specialTraits: [],
+  speed: {
+    land: 40,
+  },
+  size: CreatureSizes.Huge,
+  usesAttackBonus: true,
+  acNotes: "natural",
+  _ruleset: "2014",
+} as Monster;

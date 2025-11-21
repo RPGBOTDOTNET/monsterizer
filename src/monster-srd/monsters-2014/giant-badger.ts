@@ -1,0 +1,90 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+import { SPECIAL_TRAITS } from "../monster-traits";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 13,
+    [AbilityScores.Dexterity]: 10,
+    [AbilityScores.Constitution]: 15,
+    [AbilityScores.Intelligence]: 2,
+    [AbilityScores.Wisdom]: 12,
+    [AbilityScores.Charisma]: 5,
+  },
+  ac: 10,
+  actions: [
+    {
+      averageDamage: 16,
+      description:
+        "The badger makes two attacks: one with its bite and one with its claws.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 3,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 4,
+      damageExpression: "1d6 + 1",
+      damageType: DamageTypes.Piercing,
+      description:
+        "*4 Attack:* +3 to hit, reach 5 ft., one target. *Hit:* 4 (1d6 + 1) piercing damage.",
+      name: "Bite",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 3,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 6,
+      damageExpression: "2d4 + 1",
+      damageType: DamageTypes.Slashing,
+      description:
+        "*6 Attack:* +3 to hit, reach 5 ft., one target. *Hit:* 6 (2d4 + 1) slashing damage.",
+      name: "Claws",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 3,
+  cantSpeak: false,
+  challenge: "1/4",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Beast",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 2,
+    size: "d8",
+    modifier: 0,
+  },
+  languages: "",
+  name: "Giant Badger",
+  reactions: [],
+  savingThrows: {},
+  senses: "darkvision 30 ft.",
+  skills: {},
+  specialTraits: [SPECIAL_TRAITS.KEEN_SENSES("Smell", "smell")],
+  speed: {
+    burrow: 10,
+    land: 30,
+  },
+  size: CreatureSizes.Medium,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

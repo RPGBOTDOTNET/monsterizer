@@ -1,0 +1,88 @@
+import {
+  AbilityScores,
+  Conditions,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+import { SPECIAL_TRAITS } from "../monster-traits";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 1,
+    [AbilityScores.Dexterity]: 14,
+    [AbilityScores.Constitution]: 11,
+    [AbilityScores.Intelligence]: 10,
+    [AbilityScores.Wisdom]: 10,
+    [AbilityScores.Charisma]: 11,
+  },
+  ac: 12,
+  actions: [
+    {
+      averageDamage: 10,
+      description:
+        "*Melee Spell Attack:* +4 to hit, reach 5 ft., one creature. *Hit:* 10 (3d6) necrotic damage. The target must succeed on a DC 10 Constitution saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.",
+      name: "Life Drain",
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    lawChaos: "Chaotic",
+    goodEvil: "Evil",
+  },
+  attack: 1,
+  cantSpeak: true,
+  challenge: "1",
+  conditionImmunities: [
+    Conditions.Charmed,
+    Conditions.Exhaustion,
+    Conditions.Grappled,
+    Conditions.Paralyzed,
+    Conditions.Petrified,
+    Conditions.Poisoned,
+    Conditions.Prone,
+    Conditions.Restrained,
+    Conditions.Unconscious,
+  ],
+  creatureSubtype: "",
+  creatureType: "Undead",
+  damageImmunities: [DamageTypes.Necrotic, DamageTypes.Poison],
+  damageResistances: [
+    DamageTypes.Acid,
+    DamageTypes.Cold,
+    DamageTypes.Fire,
+    DamageTypes.Lightning,
+    DamageTypes.Thunder,
+    DamageTypes.NMBludgeoning,
+    DamageTypes.NMPiercing,
+    DamageTypes.NMSlashing,
+  ],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 5,
+    size: "d8",
+    modifier: 0,
+  },
+  languages: "all languages it knew in life",
+  name: "Specter",
+  reactions: [],
+  saveDc: 13,
+  savingThrows: {},
+  senses: "darkvision 60 ft.",
+  skills: {},
+  specialTraits: [
+    SPECIAL_TRAITS.INCORPOREAL_MOVEMENT(),
+    SPECIAL_TRAITS.SUNLIGHT_SENSITIVITY(),
+  ],
+  speed: {
+    fly: 50,
+    hover: true,
+    land: 0,
+  },
+  size: CreatureSizes.Medium,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

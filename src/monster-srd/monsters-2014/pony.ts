@@ -1,0 +1,67 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 15,
+    [AbilityScores.Dexterity]: 10,
+    [AbilityScores.Constitution]: 13,
+    [AbilityScores.Intelligence]: 2,
+    [AbilityScores.Wisdom]: 11,
+    [AbilityScores.Charisma]: 7,
+  },
+  ac: 10,
+  actions: [
+    {
+      attackModifier: 4,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 7,
+      damageExpression: "2d4 + 2",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*7 Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 7 (2d4 + 2) bludgeoning damage.",
+      name: "Hooves",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 4,
+  cantSpeak: false,
+  challenge: "1/8",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Beast",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 2,
+    size: "d8",
+    modifier: 0,
+  },
+  languages: "",
+  name: "Pony",
+  reactions: [],
+  savingThrows: {},
+  senses: "",
+  skills: {},
+  specialTraits: [],
+  speed: {
+    land: 40,
+  },
+  size: CreatureSizes.Medium,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

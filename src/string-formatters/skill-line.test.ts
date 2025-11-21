@@ -2,7 +2,7 @@ import { EMPTY_MONSTER } from "../constants";
 import { type Monster, Skills } from "../types";
 import skillLine from "./skill-line";
 
-test.only("No skills", () => {
+test("No skills", () => {
   expect(skillLine(EMPTY_MONSTER)).toEqual("");
 });
 
@@ -14,7 +14,7 @@ test("One skill", () => {
       [Skills.Deception]: { proficient: 1 },
     },
   };
-  expect(skillLine(monster)).toEqual("Deception -5");
+  expect(skillLine(monster)).toEqual("Deception -3");
 });
 
 test("Three skills", () => {
@@ -27,5 +27,5 @@ test("Three skills", () => {
       [Skills.Perception]: { proficient: 1 },
     },
   };
-  expect(skillLine(monster)).toEqual("Deception -5, Insight -5, Perception -5");
+  expect(skillLine(monster)).toEqual("Deception -3, Insight -3, Perception -3");
 });

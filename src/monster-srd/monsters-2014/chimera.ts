@@ -1,0 +1,117 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+  Skills,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 19,
+    [AbilityScores.Dexterity]: 11,
+    [AbilityScores.Constitution]: 19,
+    [AbilityScores.Intelligence]: 3,
+    [AbilityScores.Wisdom]: 14,
+    [AbilityScores.Charisma]: 10,
+  },
+  ac: 14,
+  actions: [
+    {
+      averageDamage: 32,
+      description:
+        "The chimera makes three attacks: one with its bite, one with its horns, and one with its claws. When its fire breath is available, it can use the breath in place of its bite or horns.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 7,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 11,
+      damageExpression: "2d6 + 4",
+      damageType: DamageTypes.Piercing,
+      description:
+        "*11 Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 11 (2d6 + 4) piercing damage.",
+      name: "Bite",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 7,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 10,
+      damageExpression: "1d12 + 4",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*10 Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 10 (1d12 + 4) bludgeoning damage.",
+      name: "Horns",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 7,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 11,
+      damageExpression: "2d6 + 4",
+      damageType: DamageTypes.Slashing,
+      description:
+        "*11 Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 11 (2d6 + 4) slashing damage.",
+      name: "Claws",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      averageDamage: 31,
+      description:
+        "The dragon head exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 31 (7d8) fire damage on a failed save, or half as much damage on a successful one.",
+      name: "Fire Breath (Recharge 5-6)",
+      reusable: 1,
+      targets: 2,
+    },
+  ],
+  alignment: {
+    lawChaos: "Chaotic",
+    goodEvil: "Evil",
+  },
+  attack: 7,
+  cantSpeak: true,
+  challenge: "6",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Monstrosity",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 12,
+    size: "d10",
+    modifier: 0,
+  },
+  languages: "Draconic",
+  name: "Chimera",
+  reactions: [],
+  saveDc: 15,
+  savingThrows: {},
+  senses: "darkvision 60 ft.",
+  skills: {
+    [Skills.Perception]: {
+      proficient: 1,
+    },
+  },
+  specialTraits: [],
+  speed: {
+    fly: 60,
+    land: 30,
+  },
+  size: CreatureSizes.Large,
+  usesAttackBonus: true,
+  acNotes: "natural",
+  _ruleset: "2014",
+} as Monster;

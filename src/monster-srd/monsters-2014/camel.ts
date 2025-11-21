@@ -1,0 +1,67 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 16,
+    [AbilityScores.Dexterity]: 8,
+    [AbilityScores.Constitution]: 14,
+    [AbilityScores.Intelligence]: 2,
+    [AbilityScores.Wisdom]: 8,
+    [AbilityScores.Charisma]: 5,
+  },
+  ac: 9,
+  actions: [
+    {
+      attackModifier: 5,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 2,
+      damageExpression: "1d4",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*2 Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 2 (1d4) bludgeoning damage.",
+      name: "Bite",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 5,
+  cantSpeak: false,
+  challenge: "1/8",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Beast",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 2,
+    size: "d10",
+    modifier: 0,
+  },
+  languages: "",
+  name: "Camel",
+  reactions: [],
+  savingThrows: {},
+  senses: "",
+  skills: {},
+  specialTraits: [],
+  speed: {
+    land: 50,
+  },
+  size: CreatureSizes.Large,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;
