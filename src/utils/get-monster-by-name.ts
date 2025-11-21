@@ -1,4 +1,4 @@
-import MONSTER_SRD from "../monsters/monsterSRD";
+import MONSTER_SRD from "../monster-srd/monsterSRD";
 import type { Monster } from "../types";
 
 /**

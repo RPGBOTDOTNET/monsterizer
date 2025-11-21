@@ -1,0 +1,68 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 11,
+    [AbilityScores.Dexterity]: 16,
+    [AbilityScores.Constitution]: 11,
+    [AbilityScores.Intelligence]: 2,
+    [AbilityScores.Wisdom]: 14,
+    [AbilityScores.Charisma]: 5,
+  },
+  ac: 13,
+  actions: [
+    {
+      attackModifier: 2,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 2,
+      damageExpression: "1d4",
+      damageType: DamageTypes.Piercing,
+      description:
+        "*2 Attack:* +2 to hit, reach 5 ft., one target. *Hit:* 2 (1d4) piercing damage.",
+      name: "Bite",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 4,
+  cantSpeak: false,
+  challenge: "0",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Beast",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 1,
+    size: "d8",
+    modifier: 0,
+  },
+  languages: "",
+  name: "Deer",
+  reactions: [],
+  saveDc: 11,
+  savingThrows: {},
+  senses: "",
+  skills: {},
+  specialTraits: [],
+  speed: {
+    land: 50,
+  },
+  size: CreatureSizes.Medium,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

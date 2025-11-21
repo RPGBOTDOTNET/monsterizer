@@ -1,0 +1,68 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 18,
+    [AbilityScores.Dexterity]: 10,
+    [AbilityScores.Constitution]: 12,
+    [AbilityScores.Intelligence]: 2,
+    [AbilityScores.Wisdom]: 11,
+    [AbilityScores.Charisma]: 7,
+  },
+  ac: 10,
+  actions: [
+    {
+      attackModifier: 6,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 9,
+      damageExpression: "2d4 + 4",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*9 Attack:* +6 to hit, reach 5 ft., one target. *Hit:* 9 (2d4 + 4) bludgeoning damage.",
+      name: "Hooves",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 6,
+  cantSpeak: false,
+  challenge: "1/4",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Beast",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 3,
+    size: "d10",
+    modifier: 0,
+  },
+  languages: "",
+  name: "Draft Horse",
+  nameShort: "horse",
+  reactions: [],
+  savingThrows: {},
+  senses: "",
+  skills: {},
+  specialTraits: [],
+  speed: {
+    land: 40,
+  },
+  size: CreatureSizes.Large,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

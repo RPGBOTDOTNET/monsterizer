@@ -1,4 +1,4 @@
-import MONSTER_SRD from "../monsters/monsterSRD";
+import MONSTER_SRD from "../monster-srd/monsterSRD";
 import getMonsterByName from "./get-monster-by-name";
 
 it("Does not find non-existent monster", () => {

@@ -1,0 +1,80 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 11,
+    [AbilityScores.Dexterity]: 12,
+    [AbilityScores.Constitution]: 12,
+    [AbilityScores.Intelligence]: 10,
+    [AbilityScores.Wisdom]: 10,
+    [AbilityScores.Charisma]: 10,
+  },
+  ac: 12,
+  actions: [
+    {
+      attackModifier: 3,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 4,
+      damageExpression: "1d6 + 1",
+      damageType: DamageTypes.Slashing,
+      description:
+        "*4 Attack:* +3 to hit, reach 5 ft., one target. *Hit:* 4 (1d6 + 1) slashing damage.",
+      name: "Scimitar",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 3,
+      attackType: AttackTypes.RangedWeapon,
+      averageDamage: 5,
+      description:
+        "*Ranged Weapon Attack:* +3 to hit, range 80/320 ft., one target. *Hit:* 5 (1d8 + 1) piercing damage.",
+      name: "Light Crossbow",
+      range: "80/320",
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    lawChaos: "any",
+    goodEvil: "non-lawful",
+  },
+  attack: 3,
+  cantSpeak: false,
+  challenge: "1/8",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Humanoid",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: `Bandits rove in gangs and are sometimes led by thugs, veterans, or spellcasters. Not all bandits are evil. Oppression, drought, disease, or famine can often drive otherwise honest folk to a life of banditry.
+Pirates are bandits of the high seas. They might be freebooters interested only in treasure and murder, or they might be privateers sanctioned by the crown to attack and plunder an enemy nation's vessels.`,
+  group: "NPCs",
+  hitDice: {
+    count: 2,
+    size: "d8",
+    modifier: 0,
+  },
+  languages: "any one language (usually Common)",
+  name: "Bandit",
+  reactions: [],
+  savingThrows: {},
+  senses: "",
+  skills: {},
+  specialTraits: [],
+  speed: {
+    land: 30,
+  },
+  size: CreatureSizes.Medium,
+  usesAttackBonus: true,
+  acNotes: "leather",
+  _ruleset: "2014",
+} as Monster;

@@ -1,0 +1,101 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  Conditions,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+import { SPECIAL_TRAITS } from "../monster-traits";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 22,
+    [AbilityScores.Dexterity]: 9,
+    [AbilityScores.Constitution]: 20,
+    [AbilityScores.Intelligence]: 3,
+    [AbilityScores.Wisdom]: 11,
+    [AbilityScores.Charisma]: 1,
+  },
+  ac: 17,
+  actions: [
+    {
+      averageDamage: 38,
+      description: "The golem makes two slam attacks.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 10,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 19,
+      damageExpression: "3d8 + 6",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*19 Attack:* +10 to hit, reach 5 ft., one target. *Hit:* 19 (3d8 + 6) bludgeoning damage.",
+      name: "Slam",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      averageDamage: 0,
+      description:
+        "The golem targets one or more creatures it can see within 10 feet of it. Each target must make a DC 17 Wisdom saving throw against this magic. On a failed save, a target can't use reactions, its speed is halved, and it can't make more than one attack on its turn. In addition, the target can take either an action or a bonus action on its turn, not both. These effects last for 1 minute. A target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      name: "Slow (Recharge 5-6)",
+      reusable: 1,
+      targets: 0,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 10,
+  cantSpeak: true,
+  challenge: "10",
+  conditionImmunities: [
+    Conditions.Charmed,
+    Conditions.Exhaustion,
+    Conditions.Frightened,
+    Conditions.Paralyzed,
+    Conditions.Petrified,
+    Conditions.Poisoned,
+  ],
+  creatureSubtype: "",
+  creatureType: "construct",
+  damageImmunities: [
+    DamageTypes.Poison,
+    DamageTypes.Psychic,
+    "bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine",
+  ],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "Golems",
+  hitDice: {
+    count: 17,
+    size: "d10",
+    modifier: 0,
+  },
+  languages: "the languages of its creator",
+  name: "Stone Golem",
+  reactions: [],
+  saveDc: 17,
+  savingThrows: {},
+  senses: "darkvision 120 ft.",
+  skills: {},
+  specialTraits: [
+    SPECIAL_TRAITS.IMMUTABLE_FORM(),
+    SPECIAL_TRAITS.MAGIC_RESISTANCE(),
+    SPECIAL_TRAITS.MAGIC_WEAPONS(),
+  ],
+  speed: {
+    land: 30,
+  },
+  size: CreatureSizes.Large,
+  usesAttackBonus: true,
+  acNotes: "natural",
+  _ruleset: "2014",
+} as Monster;

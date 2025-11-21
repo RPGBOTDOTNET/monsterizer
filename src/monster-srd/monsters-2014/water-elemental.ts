@@ -1,0 +1,106 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  Conditions,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+import { SPECIAL_TRAITS } from "../monster-traits";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 18,
+    [AbilityScores.Dexterity]: 14,
+    [AbilityScores.Constitution]: 18,
+    [AbilityScores.Intelligence]: 5,
+    [AbilityScores.Wisdom]: 10,
+    [AbilityScores.Charisma]: 8,
+  },
+  ac: 14,
+  acNotes: "natural",
+  actions: [
+    {
+      averageDamage: 26,
+      description: "The elemental makes two slam attacks.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 7,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 13,
+      damageExpression: "2d8 + 4",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*13 Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 13 (2d8 + 4) bludgeoning damage.",
+      name: "Slam",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      averageDamage: 13,
+      description:
+        "Each creature in the elemental's space must make a DC 15 Strength saving throw. On a failure, a target takes 13 (2d8+4) bludgeoning damage. If it is Large or smaller, it is also grappled (escape DC 14). Until this grapple ends, the target is restrained and unable to breathe unless it can breathe water. If the saving throw is successful, the target is pushed out of the elemental's space." +
+        "The elemental can grapple one Large creature or up to two Medium or smaller creatures at one time. At the start of each of the elemental's turns, each target grappled by it takes 13 (2d8 + 4) bludgeoning damage. A creature within 5 feet of the elemental can pull a creature or object out of it by taking an action to make a DC 14 Strength and succeeding.",
+      name: "Whelm (Recharge 4-6)",
+      reusable: 2,
+      targets: 2,
+    },
+  ],
+  alignment: {
+    goodEvil: "Neutral",
+    lawChaos: "Neutral",
+  },
+  attack: 7,
+  cantSpeak: false,
+  challenge: "5",
+  conditionImmunities: [
+    Conditions.Exhaustion,
+    Conditions.Grappled,
+    Conditions.Paralyzed,
+    Conditions.Petrified,
+    Conditions.Poisoned,
+    Conditions.Prone,
+    Conditions.Restrained,
+    Conditions.Unconscious,
+  ],
+  creatureSubtype: "",
+  creatureType: "Elemental",
+  damageImmunities: [DamageTypes.Poison],
+  damageResistances: [
+    DamageTypes.Acid,
+    DamageTypes.NMBludgeoning,
+    DamageTypes.NMPiercing,
+    DamageTypes.NMSlashing,
+  ],
+  damageVulnerabilities: [],
+  description: "",
+  group: "Elementals",
+  hitDice: {
+    count: 12,
+    size: "d10",
+    modifier: 0,
+  },
+  languages: "Aquan",
+  name: "Water Elemental",
+  nameShort: "elemental",
+  reactions: [],
+  saveDc: 14,
+  savingThrows: {},
+  senses: "darkvision 60 ft.",
+  skills: {},
+  specialTraits: [
+    SPECIAL_TRAITS.SQUEEZE("Water Form"),
+    SPECIAL_TRAITS.FREEZE(20),
+  ],
+  speed: {
+    land: 30,
+    swim: 90,
+  },
+  size: CreatureSizes.Large,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

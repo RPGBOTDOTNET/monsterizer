@@ -1,0 +1,70 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 15,
+    [AbilityScores.Dexterity]: 12,
+    [AbilityScores.Constitution]: 13,
+    [AbilityScores.Intelligence]: 2,
+    [AbilityScores.Wisdom]: 10,
+    [AbilityScores.Charisma]: 5,
+  },
+  ac: 12,
+  actions: [
+    {
+      attackModifier: 4,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 6,
+      damageExpression: "1d8 + 2",
+      damageType: DamageTypes.Piercing,
+      description:
+        "*6 Attack:* +4 to hit, reach 5 ft., one target. *Hit:* 6 (1d8 + 2) piercing damage.",
+      name: "Bite",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 4,
+  cantSpeak: false,
+  challenge: "1/4",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Beast",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description:
+    "A giant lizard can be ridden or used as a draft animal. Lizardfolk also keep them as pets, and subterranean giant lizards are used as mounts and pack animals by drow, duergar, and others.",
+  group: "",
+  hitDice: {
+    count: 3,
+    size: "d10",
+    modifier: 0,
+  },
+  languages: "",
+  name: "Giant Lizard",
+  reactions: [],
+  savingThrows: {},
+  senses: "darkvision 30 ft.",
+  skills: {},
+  specialTraits: [],
+  speed: {
+    climb: 30,
+    land: 30,
+  },
+  size: CreatureSizes.Large,
+  usesAttackBonus: true,
+  acNotes: "natural",
+  _ruleset: "2014",
+} as Monster;

@@ -1,0 +1,97 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  Conditions,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+import { SPECIAL_TRAITS } from "../monster-traits";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 19,
+    [AbilityScores.Dexterity]: 9,
+    [AbilityScores.Constitution]: 18,
+    [AbilityScores.Intelligence]: 6,
+    [AbilityScores.Wisdom]: 10,
+    [AbilityScores.Charisma]: 5,
+  },
+  ac: 9,
+  actions: [
+    {
+      averageDamage: 26,
+      description: "The golem makes two slam attacks.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 7,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 13,
+      damageExpression: "2d8 + 4",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*13 Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 13 (2d8 + 4) bludgeoning damage.",
+      name: "Slam",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Neutral",
+    lawChaos: "Neutral",
+  },
+  attack: 7,
+  cantSpeak: true,
+  challenge: "5",
+  conditionImmunities: [
+    Conditions.Charmed,
+    Conditions.Exhaustion,
+    Conditions.Frightened,
+    Conditions.Paralyzed,
+    Conditions.Petrified,
+    Conditions.Poisoned,
+  ],
+  creatureSubtype: "",
+  creatureType: "construct",
+  damageImmunities: [
+    DamageTypes.Lightning,
+    DamageTypes.Poison,
+    "bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine",
+  ],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "Golems",
+  hitDice: {
+    count: 11,
+    size: "d8",
+    modifier: 0,
+  },
+  languages: "the languages of its creator",
+  name: "Flesh Golem",
+  reactions: [],
+  savingThrows: {},
+  senses: "darkvision 60 ft.",
+  skills: {},
+  specialTraits: [
+    SPECIAL_TRAITS.BERSERK(60, true),
+    SPECIAL_TRAITS.DAMAGE_AVERSION(
+      DamageTypes.Fire.toLocaleLowerCase(),
+      DamageTypes.Fire,
+    ),
+    SPECIAL_TRAITS.IMMUTABLE_FORM(),
+    SPECIAL_TRAITS.DAMAGE_ABSORPTION("lightning", "Lightning Absorption"),
+    SPECIAL_TRAITS.MAGIC_RESISTANCE(),
+    SPECIAL_TRAITS.MAGIC_WEAPONS(),
+  ],
+  speed: {
+    land: 30,
+  },
+  size: CreatureSizes.Medium,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

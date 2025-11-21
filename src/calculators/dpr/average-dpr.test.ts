@@ -4,7 +4,7 @@ import {
   damageFromSpecialTraits,
 } from "..";
 import { EMPTY_MONSTER } from "../../constants";
-import { SPECIAL_TRAITS } from "../../monsters/monster-traits";
+import { SPECIAL_TRAITS } from "../../monster-srd/monster-traits";
 import type {
   Action,
   LairAction,

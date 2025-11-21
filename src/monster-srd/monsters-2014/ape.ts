@@ -1,0 +1,94 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+  Skills,
+} from "../../types";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 16,
+    [AbilityScores.Dexterity]: 14,
+    [AbilityScores.Constitution]: 14,
+    [AbilityScores.Intelligence]: 6,
+    [AbilityScores.Wisdom]: 12,
+    [AbilityScores.Charisma]: 7,
+  },
+  ac: 12,
+  actions: [
+    {
+      averageDamage: 12,
+      description: "The ape makes two fist attacks.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 5,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 6,
+      damageExpression: "1d6 + 3",
+      damageType: DamageTypes.Bludgeoning,
+      description:
+        "*6 Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 6 (1d6 + 3) bludgeoning damage.",
+      name: "Fist",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 5,
+      attackType: AttackTypes.RangedWeapon,
+      averageDamage: 6,
+      description:
+        "*Ranged Weapon Attack:* +5 to hit, range 25/50 ft., one target. *Hit:* 6 (1d6 + 3) bludgeoning damage.",
+      name: "Rock",
+      range: "25/50",
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    goodEvil: "Unaligned",
+    lawChaos: "Unaligned",
+  },
+  attack: 6,
+  cantSpeak: false,
+  challenge: "1/2",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Beast",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 3,
+    size: "d8",
+    modifier: 0,
+  },
+  languages: "",
+  name: "Ape",
+  reactions: [],
+  savingThrows: {},
+  senses: "",
+  skills: {
+    [Skills.Athletics]: {
+      proficient: 1,
+    },
+    [Skills.Perception]: {
+      proficient: 1,
+    },
+  },
+  specialTraits: [],
+  speed: {
+    climb: 30,
+    land: 30,
+  },
+  size: CreatureSizes.Medium,
+  usesAttackBonus: true,
+  _ruleset: "2014",
+} as Monster;

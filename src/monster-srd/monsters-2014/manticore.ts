@@ -1,0 +1,102 @@
+import {
+  AbilityScores,
+  AttackTypes,
+  CreatureSizes,
+  DamageTypes,
+  type Monster,
+} from "../../types";
+import { SPECIAL_TRAITS } from "../monster-traits";
+
+export default {
+  abilityScores: {
+    [AbilityScores.Strength]: 17,
+    [AbilityScores.Dexterity]: 16,
+    [AbilityScores.Constitution]: 17,
+    [AbilityScores.Intelligence]: 7,
+    [AbilityScores.Wisdom]: 12,
+    [AbilityScores.Charisma]: 8,
+  },
+  ac: 14,
+  actions: [
+    {
+      averageDamage: 21,
+      description:
+        "The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes.",
+      name: "Multiattack",
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 5,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 7,
+      damageExpression: "1d8 + 3",
+      damageType: DamageTypes.Piercing,
+      description:
+        "*7 Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 7 (1d8 + 3) piercing damage.",
+      name: "Bite",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 5,
+      attackType: AttackTypes.MeleeWeapon,
+      averageDamage: 6,
+      damageExpression: "1d6 + 3",
+      damageType: DamageTypes.Slashing,
+      description:
+        "*6 Attack:* +5 to hit, reach 5 ft., one target. *Hit:* 6 (1d6 + 3) slashing damage.",
+      name: "Claw",
+      reach: 5,
+      reusable: 3,
+      targets: 1,
+    },
+    {
+      attackModifier: 5,
+      attackType: AttackTypes.RangedWeapon,
+      averageDamage: 7,
+      description:
+        "*Ranged Weapon Attack:* +5 to hit, range 100/200 ft., one target. *Hit:* 7 (1d8 + 3) piercing damage.",
+      name: "Tail Spike",
+      range: "100/200",
+      reusable: 3,
+      targets: 1,
+    },
+  ],
+  alignment: {
+    lawChaos: "Lawful",
+    goodEvil: "Evil",
+  },
+  attack: 5,
+  cantSpeak: false,
+  challenge: "3",
+  conditionImmunities: [],
+  creatureSubtype: "",
+  creatureType: "Monstrosity",
+  damageImmunities: [],
+  damageResistances: [],
+  damageVulnerabilities: [],
+  description: "",
+  group: "",
+  hitDice: {
+    count: 8,
+    size: "d10",
+    modifier: 0,
+  },
+  languages: "Common",
+  name: "Manticore",
+  reactions: [],
+  savingThrows: {},
+  senses: "darkvision 60 ft.",
+  skills: {},
+  specialTraits: [SPECIAL_TRAITS.TAIL_SPIKE_REGROWTH()],
+  speed: {
+    fly: 50,
+    land: 30,
+  },
+  size: CreatureSizes.Large,
+  usesAttackBonus: true,
+  acNotes: "natural",
+  _ruleset: "2014",
+} as Monster;
