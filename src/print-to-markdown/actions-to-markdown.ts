@@ -72,12 +72,12 @@ export const spellcastingToDescriptionMarkdown = (monster: Monster): string => {
     const atWillInnateSpells = (monster.innateSpellcasting.spells || [])
       .filter((spell: InnateSpell) => !spell.uses)
       .map(mapSpellName);
-    allAtWillSpells.push(...atWillInnateSpells.filter((a) => !!a));
+    allAtWillSpells.push(...atWillInnateSpells.filter(Boolean));
 
     const remainingInnateSpells = (monster.innateSpellcasting.spells || [])
       .filter((spell: InnateSpell) => spell.uses)
       .map(mapSpellName);
-    allLimitedUseSpells.push(...remainingInnateSpells.filter((a) => !!a));
+    allLimitedUseSpells.push(...remainingInnateSpells.filter(Boolean));
   }
 
   if (monster.spellcasting) {

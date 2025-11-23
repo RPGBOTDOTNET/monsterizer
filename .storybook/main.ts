@@ -1,12 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
-// TODO: Can't import CSS here
-// import "primeflex/primeflex.css";
-// import "primeicons/fonts/primeicons.eot";
-// import "primeicons/primeicons.css";
-// import "primereact/resources/primereact.min.css";
-// import "../src/index.css";
-
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [

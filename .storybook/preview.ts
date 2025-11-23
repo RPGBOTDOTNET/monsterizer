@@ -1,5 +1,11 @@
 import type { Preview } from "@storybook/react-vite";
 
+import "primeicons/fonts/primeicons.eot";
+import "primeicons/primeicons.css";
+import "primereact/resources/primereact.min.css";
+import "primereact/resources/themes/md-light-indigo/theme.css";
+import "../src/index.css";
+
 const preview: Preview = {
   parameters: {
     controls: {
