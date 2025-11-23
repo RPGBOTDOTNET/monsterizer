@@ -34,6 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Playwright
+        run: npx playwright install chromium
+
       - name: Cache npm
         uses: actions/cache@v4
         with:
@@ -118,11 +121,11 @@ jobs:
   #   steps:
   #     - uses: ./.github/actions/setup-and-restore-cache.yml
 
-  # - name: Checkout
-  #   uses: actions/checkout@v4
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
 
-  # - name: Install Playwright
-  #   run: npx playwright install chromium
+  #     - name: Install Playwright
+  #       run: npx playwright install chromium
 
   #     - name: Run Cypress
   #       run: npx cypress run
