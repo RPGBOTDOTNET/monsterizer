@@ -4,6 +4,7 @@ export * from "./attack.type";
 export * from "./condition.type";
 export * from "./damage.type";
 export * from "./monster.type";
+export * from "./monsterizer-form-data";
 export * from "./proficiency.type";
 export * from "./rest.type";
 export * from "./size.type";
